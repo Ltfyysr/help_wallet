@@ -1,8 +1,7 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'colors.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -12,6 +11,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const MaterialApp(
+    localizationsDelegates: const [
+      AppLocalizations.delegate,
+      GlobalWidgetsLocalizations.delegate,
+      GlobalMaterialLocalizations.delegate,
+      GlobalCupertinoLocalizations.delegate
+    ],
+    supportedLocales: const [
+      Locale("en",""),
+      Locale("tr","")
+    ],
         debugShowCheckedModeBanner: false,
         home: AnaSayfa(),
       );
@@ -27,6 +36,7 @@ class AnaSayfa extends StatefulWidget {
 class _AnaSayfaState extends State<AnaSayfa> {
   @override
   Widget build(BuildContext context) {
+    var d=AppLocalizations.of(context);
     var ekranBilgisi = MediaQuery.of(context);
     final double ekranYuksekligi = ekranBilgisi.size.height;
     final double ekranGenisligi = ekranBilgisi.size.width;
@@ -43,17 +53,17 @@ class _AnaSayfaState extends State<AnaSayfa> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Welcome back,",
+                    d!.baslik1,
                     style: TextStyle(
                         color: yaziRenk1,
                         fontSize: ekranGenisligi / 30,
                         fontFamily: "DynaPuff"),
                   ),
                   Text(
-                    "Help Good People",
+                    d!.baslik2,
                     style: TextStyle(
                         color: yaziRenk2,
-                        fontSize: ekranGenisligi / 24,
+                        fontSize: ekranGenisligi / 28,
                         fontWeight: FontWeight.bold),
                   ),
                 ],
@@ -107,7 +117,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Your Wallet",
+                        d!.cuzdanYazi,
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
@@ -118,7 +128,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                         height: 12,
                       ),
                       Text(
-                        "120.000 ₺",
+                        d!.fiyatyazi,
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -131,7 +141,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                     child: TextButton(
                       onPressed: () {},
                       child: Text(
-                        "Top Up",
+                        d!.cuzdanyazi2,
                         style: TextStyle(color: yaziRenk2),
                       ),
                       style: TextButton.styleFrom(
@@ -172,7 +182,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                           ),
                         )),
                     Text(
-                      "Search here",
+                      d!.aramaYazisi,
                       style: TextStyle(color: renk2),
                     )
                   ],
@@ -257,14 +267,14 @@ class _AnaSayfaState extends State<AnaSayfa> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Featured",
+                  d!.yazi1,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: yaziRenk2,
                       fontSize: 16),
                 ),
                 Text(
-                  "See More",
+                  d!.yazi2,
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: renk1, fontSize: 12),
                 )
@@ -276,7 +286,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
             child: Image.asset("images/cocuklar.jpg"),
           ),
           Text(
-            "Help Them Smile Again",
+            d!.altyazi,
             style: TextStyle(color: yaziRenk1, fontSize: 18),
           ),
           Container(
@@ -295,7 +305,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
           TextButton(
             onPressed: () {},
             child: Text(
-              "Donate Now",
+              d!.buttonYazi,
               style: TextStyle(color: anaRenk),
             ),
             style: TextButton.styleFrom(
@@ -309,3 +319,6 @@ class _AnaSayfaState extends State<AnaSayfa> {
     );
   }
 }
+
+
+
