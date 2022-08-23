@@ -27,9 +27,9 @@ class AnaSayfa extends StatefulWidget {
 class _AnaSayfaState extends State<AnaSayfa> {
   @override
   Widget build(BuildContext context) {
-    var ekranBilgisi=MediaQuery.of(context);
-    final double ekranYuksekligi=ekranBilgisi.size.height;
-    final double ekranGenisligi=ekranBilgisi.size.width;
+    var ekranBilgisi = MediaQuery.of(context);
+    final double ekranYuksekligi = ekranBilgisi.size.height;
+    final double ekranGenisligi = ekranBilgisi.size.width;
 
     return Scaffold(
       backgroundColor: anaRenk,
@@ -44,11 +44,17 @@ class _AnaSayfaState extends State<AnaSayfa> {
                 children: [
                   Text(
                     "Welcome back,",
-                    style: TextStyle(color: yaziRenk1, fontSize: ekranGenisligi/30,fontFamily: "DynaPuff"),
+                    style: TextStyle(
+                        color: yaziRenk1,
+                        fontSize: ekranGenisligi / 30,
+                        fontFamily: "DynaPuff"),
                   ),
                   Text(
                     "Help Good People",
-                    style: TextStyle(color: yaziRenk2, fontSize: ekranGenisligi/24,fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: yaziRenk2,
+                        fontSize: ekranGenisligi / 24,
+                        fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -73,15 +79,13 @@ class _AnaSayfaState extends State<AnaSayfa> {
       body: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.start,
-
         children: [
-
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               margin: EdgeInsets.all(10),
               width: ekranGenisligi,
-              height: ekranYuksekligi/6,
+              height: ekranYuksekligi / 6,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30), color: renk1),
               child: Row(
@@ -107,7 +111,8 @@ class _AnaSayfaState extends State<AnaSayfa> {
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
-                            color: yaziRenk1,fontFamily: "DynaPuff"),
+                            color: yaziRenk1,
+                            fontFamily: "DynaPuff"),
                       ),
                       SizedBox(
                         height: 12,
@@ -132,7 +137,8 @@ class _AnaSayfaState extends State<AnaSayfa> {
                       style: TextButton.styleFrom(
                         backgroundColor: anaRenk,
                         shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(20))),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
                       ),
                     ),
                   ),
@@ -182,10 +188,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                 width: 60,
                 margin: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    //color: Color.fromARGB(255, 6, 62, 48)
-                color: yaziRenk1
-                ),
+                    borderRadius: BorderRadius.circular(30), color: yaziRenk1),
 
                 // child:  const Icon(Icons.send),
                 child: TextButton(
@@ -202,7 +205,6 @@ class _AnaSayfaState extends State<AnaSayfa> {
                   margin: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      //color: Color.fromARGB(255, 105, 28, 90)
                       color: yaziRenk1),
                   child: TextButton(
                     onPressed: () {},
@@ -217,7 +219,6 @@ class _AnaSayfaState extends State<AnaSayfa> {
                   margin: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      //color: const Color.fromARGB(255, 192, 23, 11)
                       color: yaziRenk1),
                   child: TextButton(
                     onPressed: () {},
@@ -232,7 +233,6 @@ class _AnaSayfaState extends State<AnaSayfa> {
                   margin: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      //color: const Color.fromARGB(255, 23, 180, 172)
                       color: yaziRenk1),
                   child: TextButton(
                     onPressed: () {},
@@ -244,7 +244,6 @@ class _AnaSayfaState extends State<AnaSayfa> {
                   margin: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      //color: const Color.fromARGB(255, 248, 12, 193)
                       color: yaziRenk1),
                   child: TextButton(
                     onPressed: () {},
@@ -287,7 +286,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
                 //color: const Color.fromARGB(255, 248, 12, 193)
-            color:yaziRenk1),
+                color: yaziRenk1),
           ),
           SizedBox(
             height: 8,
