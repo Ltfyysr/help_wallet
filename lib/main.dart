@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,16 +12,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const MaterialApp(
-    localizationsDelegates: const [
-      AppLocalizations.delegate,
-      GlobalWidgetsLocalizations.delegate,
-      GlobalMaterialLocalizations.delegate,
-      GlobalCupertinoLocalizations.delegate
-    ],
-    supportedLocales: const [
-      Locale("en",""),
-      Locale("tr","")
-    ],
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate
+        ],
+        supportedLocales: const [Locale("en", ""), Locale("tr", "")],
         debugShowCheckedModeBanner: false,
         home: AnaSayfa(),
       );
@@ -36,7 +34,7 @@ class AnaSayfa extends StatefulWidget {
 class _AnaSayfaState extends State<AnaSayfa> {
   @override
   Widget build(BuildContext context) {
-    var d=AppLocalizations.of(context);
+    var d = AppLocalizations.of(context);
     var ekranBilgisi = MediaQuery.of(context);
     final double ekranYuksekligi = ekranBilgisi.size.height;
     final double ekranGenisligi = ekranBilgisi.size.width;
@@ -60,7 +58,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                         fontFamily: "DynaPuff"),
                   ),
                   Text(
-                    d!.baslik2,
+                    d.baslik2,
                     style: TextStyle(
                         color: yaziRenk2,
                         fontSize: ekranGenisligi / 28,
@@ -94,7 +92,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
             padding: const EdgeInsets.all(8.0),
             child: Container(
               margin: EdgeInsets.all(10),
-              width: ekranGenisligi,
+              width: ekranGenisligi / 0.8,
               height: ekranYuksekligi / 6,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30), color: renk1),
@@ -103,8 +101,8 @@ class _AnaSayfaState extends State<AnaSayfa> {
                 children: [
                   Container(
                     margin: EdgeInsets.all(10),
-                    width: 60,
-                    height: 60,
+                    width: ekranGenisligi / 6,
+                    height: ekranYuksekligi / 11,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: yaziRenk2),
@@ -117,7 +115,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        d!.cuzdanYazi,
+                        d.cuzdanYazi,
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
@@ -128,7 +126,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                         height: 12,
                       ),
                       Text(
-                        d!.fiyatyazi,
+                        d.fiyatyazi,
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -141,7 +139,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                     child: TextButton(
                       onPressed: () {},
                       child: Text(
-                        d!.cuzdanyazi2,
+                        d.cuzdanyazi2,
                         style: TextStyle(color: yaziRenk2),
                       ),
                       style: TextButton.styleFrom(
@@ -160,9 +158,9 @@ class _AnaSayfaState extends State<AnaSayfa> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                margin: EdgeInsets.all(14.0),
-                width: 380,
-                height: 50,
+                margin: EdgeInsets.all(8.0),
+                width: ekranGenisligi / 1.08,
+                height: ekranYuksekligi / 15,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20), color: yaziRenk2),
                 child: Row(
@@ -182,7 +180,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                           ),
                         )),
                     Text(
-                      d!.aramaYazisi,
+                      d.aramaYazisi,
                       style: TextStyle(color: renk2),
                     )
                   ],
@@ -199,8 +197,6 @@ class _AnaSayfaState extends State<AnaSayfa> {
                 margin: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30), color: yaziRenk1),
-
-                // child:  const Icon(Icons.send),
                 child: TextButton(
                   onPressed: () {},
                   child: Icon(
@@ -267,14 +263,14 @@ class _AnaSayfaState extends State<AnaSayfa> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  d!.yazi1,
+                  d.yazi1,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: yaziRenk2,
                       fontSize: 16),
                 ),
                 Text(
-                  d!.yazi2,
+                  d.yazi2,
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: renk1, fontSize: 12),
                 )
@@ -286,7 +282,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
             child: Image.asset("images/cocuklar.jpg"),
           ),
           Text(
-            d!.altyazi,
+            d.altyazi,
             style: TextStyle(color: yaziRenk1, fontSize: 18),
           ),
           Container(
@@ -294,18 +290,16 @@ class _AnaSayfaState extends State<AnaSayfa> {
             width: 400,
             margin: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                //color: const Color.fromARGB(255, 248, 12, 193)
-                color: yaziRenk1),
+                borderRadius: BorderRadius.circular(30), color: yaziRenk1),
           ),
           SizedBox(
-            height: 8,
-            width: 5,
+            height: ekranYuksekligi / 85,
+            width: ekranGenisligi / 82,
           ),
           TextButton(
             onPressed: () {},
             child: Text(
-              d!.buttonYazi,
+              d.buttonYazi,
               style: TextStyle(color: anaRenk),
             ),
             style: TextButton.styleFrom(
@@ -319,6 +313,3 @@ class _AnaSayfaState extends State<AnaSayfa> {
     );
   }
 }
-
-
-
